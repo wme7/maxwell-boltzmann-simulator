@@ -150,6 +150,20 @@ void BoltzmannDemo()
 	double LARGEST_STEP = 10e-3;
 	bool    is_tracking = false; // Draw the random walk path of the first particle.
 
+	// Usage:
+	std::cout << 
+	"Recognized key commands:\n"
+	" 0   : Add new static particle.\n"
+	" 1-4 : Launch particles of increasing speeds.\n"
+	" 6   : Launch a very fast (x100) particle.\n"
+	" 8-9 : Launch a lot of new particles.\n"
+	" t   : Toogle tracking of random-walk.\n"
+	" x/z : Simulation speed up/down (limited by CPU time).\n"
+	" +/- : Increase/decrease point particle size.\n"
+	"\n";
+
+
+
 	CDisplayWindow3D	win("Boltzmann simulator",DEFAULT_WIN_WIDTH,700);
 
 	randomGenerator.randomize();
@@ -349,7 +363,7 @@ void BoltzmannDemo()
 
 		// Update window:
 		win.forceRepaint();
-		mrpt::system::sleep(1);
+		mrpt::system::sleep(1); 
 
 		if (win.keyHit())
 		{
